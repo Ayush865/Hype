@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from "react-redux";
-import { setMode, setLogout } from "state";
+import { useDispatch } from "react-redux";
+import { setMode} from "state";
+
+import {useTheme} from "@mui/material";
 import '../ThemeSwitch.css'; 
 
 const ThemeSwitch = () => {
+  const theme = useTheme();
   const dispatch = useDispatch();
-  const [isChecked, setIsChecked] = useState(false);
-
+  // const [isChecked, setIsChecked] = useState(false);
+  const isChecked=theme.palette.mode === "dark";
   const handleThemeToggle = () => {
-    setIsChecked((prevIsChecked) => !prevIsChecked);
+    // setIsChecked((prevIsChecked) => !prevIsChecked);
     // Implement your theme toggle logic here
     dispatch(setMode());
   };

@@ -1,11 +1,11 @@
 import {
-  ManageAccountsOutlined,
-  EditOutlined,
-  LocationOnOutlined,
+  // ManageAccountsOutlined,
+  // EditOutlined,
+  // LocationOnOutlined,
   WorkOutlineOutlined,
 } from "@mui/icons-material";
 
-import { Box, Typography, Divider, useTheme, IconButton } from "@mui/material";
+import { Box, Typography, Divider, useTheme } from "@mui/material";
 import UserImage from "components/UserImage";
 import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
@@ -13,8 +13,8 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// import TwitterIcon from '@mui/icons-material/Twitter';
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PersonPinCircleRoundedIcon from '@mui/icons-material/PersonPinCircleRounded';
 import SocialButtons from "components/SocialButtons";
 // import WorkIcon from '@mui/icons-material/Work';
@@ -43,7 +43,7 @@ const UserWidget = ({ userId, picturePath, isFriendProfile = false }) => {
       // console.log("hi")
       setUser(res?.data);
     }).catch((err) => {
-      console.log("An error occured!")
+      console.log(err)
     })
     // const response = await fetch(`http://localhost:3001/users/${userId}?callerId=${_id}`, {
     //   method: "GET",
@@ -68,7 +68,7 @@ const UserWidget = ({ userId, picturePath, isFriendProfile = false }) => {
     lastName,
     location,
     occupation,
-    viewedProfile,
+    // viewedProfile,
     impressions,
     friends,
   } = user;

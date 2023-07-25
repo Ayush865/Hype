@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import ThemeSwitch from "components/ThemeSwitch";
+// import HamburgerCheckbox from "components/HamburgerCheckbox"
 
 import {
   Box,
@@ -63,7 +64,7 @@ const Navbar = () => {
     })
   }
   return (
-    <FlexBetween className="nav" padding="1rem 6%" backgroundColor={alt}>
+    <FlexBetween className="nav" padding="1rem 6%" backgroundColor={alt} boxShadow="0px 3px 14px #7f6e9027;" >
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
@@ -97,7 +98,7 @@ const Navbar = () => {
       {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
-          <ThemeSwitch/>
+          <ThemeSwitch />
           <Message sx={{ fontSize: "25px" }} />
           <Notifications sx={{ fontSize: "25px" }} />
           <Help sx={{ fontSize: "25px" }} />
@@ -131,6 +132,7 @@ const Navbar = () => {
           onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}//menu when you are in small screens 
         >
           <Menu />
+          {/* <HamburgerCheckbox/> */}
         </IconButton>
       )}
 

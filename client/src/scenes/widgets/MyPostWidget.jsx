@@ -80,20 +80,23 @@ const MyPostWidget = ({ picturePath }) => {
       {isImage && (
         <Box
           border={`1px solid ${medium}`}
-          borderRadius="5px"
+          borderRadius="15px"
           mt="1rem"
           p="1rem"
+          
         >
           <Dropzone
             acceptedFiles=".jpg,.jpeg,.png"
             multiple={false}
             onDrop={(acceptedFiles) => setImage(acceptedFiles[0])}
+            
           >
             {({ getRootProps, getInputProps }) => (
               <FlexBetween>
                 <Box
                   {...getRootProps()}
                   border={`2px dashed ${palette.primary.main}`}
+                  borderRadius={`20px`}
                   p="1rem"
                   width="100%"
                   sx={{ "&:hover": { cursor: "pointer" } }}

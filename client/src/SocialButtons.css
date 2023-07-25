@@ -3,7 +3,9 @@
     justify-content: space-evenly;
     align-items: center;
     /* background-color: #f2f2f2; */
-    box-shadow: 0px 0px 4px #7f6e9027;
+    /* border: 1px solid white; */
+    /* box-shadow: 0px 0px 14px #7b787f27; */
+    background: transparent;
     padding: 10px;
     border-radius: 3em;
   }

@@ -19,7 +19,7 @@ export const createPost = async (req, res) => {
     });
     await newPost.save();
     // const newpost=await newPost.save();
-    console.log("hi");
+    // console.log("hi");
 
     const post = await Post.find().sort({createdAt : -1});
     res.status(201).json(post);

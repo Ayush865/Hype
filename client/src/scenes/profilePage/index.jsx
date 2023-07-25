@@ -36,8 +36,8 @@ const ProfilePage = () => {
         width="100%"
         padding="2rem 6%"
         display={isNonMobileScreens ? "flex" : "block"}
-        gap="2rem"
-        justifyContent="center"
+        gap="3rem"
+        justifyContent="left"
         // border="2px solid red"
         
       >
