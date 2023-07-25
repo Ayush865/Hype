@@ -1,4 +1,10 @@
 // color design tokens export
+// font-family: 'Inter', sans-serif;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Oswald', sans-serif;
+// font-family: 'Piazzolla', serif;
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Roboto Condensed', sans-serif;
 export const colorTokens = {
   grey: {
     0: "#FFFFFF",
@@ -112,7 +118,7 @@ export const themeSettings = (mode) => {
           }),
     },
     typography: {
-      fontFamily: ["Rubik", "sans-serif"].join(","),
+      fontFamily: ["Poppins", "sans-serif"].join(","),
       fontSize: 12,
       h1: {
         fontFamily: ["Rubik", "sans-serif"].join(","),

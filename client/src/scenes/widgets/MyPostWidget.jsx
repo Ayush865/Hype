@@ -24,6 +24,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
+import "../../index.css"
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
@@ -157,7 +158,17 @@ const MyPostWidget = ({ picturePath }) => {
             <MoreHorizOutlined sx={{ color: mediumMain }} />
           </FlexBetween>
         )}
-
+        {/* <button className="button"
+        disabled={!post}
+        onClick={handlePost}
+        sx={{
+          color: palette.background.alt,
+          backgroundColor: palette.primary.main,
+          borderRadius: "3rem",
+        }}
+        >
+          <p>Button</p>
+        </button> */}
         <Button
           disabled={!post}
           onClick={handlePost}
