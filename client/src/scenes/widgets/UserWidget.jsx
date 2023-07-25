@@ -5,7 +5,7 @@ import {
   WorkOutlineOutlined,
 } from "@mui/icons-material";
 
-import { Box, Typography, Divider, useTheme,IconButton } from "@mui/material";
+import { Box, Typography, Divider, useTheme, IconButton } from "@mui/material";
 import UserImage from "components/UserImage";
 import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
@@ -16,6 +16,7 @@ import axios from "axios";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PersonPinCircleRoundedIcon from '@mui/icons-material/PersonPinCircleRounded';
+import SocialButtons from "components/SocialButtons";
 // import WorkIcon from '@mui/icons-material/Work';
 
 
@@ -33,15 +34,15 @@ const UserWidget = ({ userId, picturePath, isFriendProfile = false }) => {
 
   const getUser = async (source) => {
 
-    axios.get(`http://localhost:3001/users/${userId}?callerId=${_id}`,{
-      headers : {
-        Authorization : `Bearer ${token}`,
-        cancelToken : source.token
+    axios.get(`http://localhost:3001/users/${userId}?callerId=${_id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        cancelToken: source.token
       }
-    }).then((res)=>{
+    }).then((res) => {
       // console.log("hi")
       setUser(res?.data);
-    }).catch((err)=>{
+    }).catch((err) => {
       console.log("An error occured!")
     })
     // const response = await fetch(`http://localhost:3001/users/${userId}?callerId=${_id}`, {
@@ -55,7 +56,7 @@ const UserWidget = ({ userId, picturePath, isFriendProfile = false }) => {
     const source = axios.CancelToken.source();
     getUser(source);
 
-    return () =>{ source.cancel('Request cancelled !')}
+    return () => { source.cancel('Request cancelled !') }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!user) {
@@ -111,7 +112,7 @@ const UserWidget = ({ userId, picturePath, isFriendProfile = false }) => {
           <Typography color={medium}>{location}</Typography>
         </Box>
         <Box display="flex" alignItems="center" gap="1rem">
-          
+
           <WorkOutlineOutlined fontSize="large" sx={{ color: main }} />
           <Typography color={medium}>{occupation}</Typography>
         </Box>
@@ -138,17 +139,18 @@ const UserWidget = ({ userId, picturePath, isFriendProfile = false }) => {
       <Divider />
 
       {/* FOURTH ROW */}
+      
       <Box p="1rem 0">
-        <Typography fontSize="1rem" color={main} fontWeight="500" mb="1rem">
+        <Typography fontSize="1rem" color={main} fontWeight="500" mb="1rem" display="flex" justifyContent="center">
           Other Social Profiles
         </Typography>
-
-        <FlexBetween gap="1rem" mb="0.5rem">
+        <SocialButtons/>
+        {/* <FlexBetween gap="1rem" mb="0.5rem">
           <FlexBetween gap="1rem">
-          <IconButton>
-            <TwitterIcon style={{ fontSize: '1.5rem' }}/>
-          </IconButton>
-          
+            <IconButton>
+              <TwitterIcon style={{ fontSize: '1.5rem' }} />
+            </IconButton>
+
             <Box>
               <Typography color={main} fontWeight="500">
                 Twitter
@@ -160,14 +162,14 @@ const UserWidget = ({ userId, picturePath, isFriendProfile = false }) => {
             !isFriendProfile &&
             <EditOutlined sx={{ color: main }} />
           }
-          
+
         </FlexBetween>
 
         <FlexBetween gap="1rem">
           <FlexBetween gap="1rem">
-          <IconButton >
-            <LinkedInIcon style={{ fontSize: '1.5rem' }} />
-          </IconButton>
+            <IconButton >
+              <LinkedInIcon style={{ fontSize: '1.5rem' }} />
+            </IconButton>
             <Box>
               <Typography color={main} fontWeight="500">
                 Linkedin
@@ -176,8 +178,8 @@ const UserWidget = ({ userId, picturePath, isFriendProfile = false }) => {
             </Box>
           </FlexBetween>
           {!isFriendProfile &&
-          <EditOutlined sx={{ color: main }} />}
-        </FlexBetween>
+            <EditOutlined sx={{ color: main }} />}
+        </FlexBetween> */}
       </Box>
     </WidgetWrapper>
   );

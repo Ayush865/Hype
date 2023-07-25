@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { setMode, setLogout } from "state";
-import '../ThemeSwitch.css'; // Import the CSS file for styling if needed
+import '../ThemeSwitch.css'; 
 
 const ThemeSwitch = () => {
   const dispatch = useDispatch();
