@@ -244,6 +244,7 @@ const Form = () => {
                 color: palette.background.alt,
                 "&:hover": { color: palette.primary.main },
               }}
+              className="btn"
             >
               {isLogin ? "LOGIN" : "REGISTER"}
             </Button>

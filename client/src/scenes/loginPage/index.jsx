@@ -25,7 +25,7 @@ const LoginPage = () => {
         backgroundColor={theme.palette.background.alt}
       >
         <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-          Welcome to Hype, the Social Media to hype you up!
+        Discover, Share, Hype: Your Social Playground!
         </Typography>
         <Form />
       </Box>

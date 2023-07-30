@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import ThemeSwitch from "components/ThemeSwitch";
+import { SearchBar } from "components/SearchBar";
+import { SearchResultsList } from "components/SearchResultsList";
 // import HamburgerCheckbox from "components/HamburgerCheckbox"
 
 import {
@@ -45,6 +47,7 @@ const Navbar = () => {
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
   const { _id } = useSelector((state) => state.user);
+  const [results, setResults] = useState([]);
 
   const alt = theme.palette.background.alt;
 
@@ -87,10 +90,12 @@ const Navbar = () => {
             gap="3rem"
             padding="0.1rem 1.5rem"
           >
-            <InputBase placeholder="Search..." value={searchText} onChange={(e)=>{setsearchText(()=>e.target.value)}}/>
+            <SearchBar setResults={setResults} userId={_id}/>
+            <SearchResultsList results={results}/>
+            {/* <InputBase placeholder="Search..." value={searchText} onChange={(e)=>{setsearchText(()=>e.target.value)}}/>
             <IconButton onClick={handleSearch}>
               <Search  />
-            </IconButton>
+            </IconButton> */}
           </FlexBetween>
         )}
       </FlexBetween>
