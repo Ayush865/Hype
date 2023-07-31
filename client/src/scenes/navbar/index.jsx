@@ -85,12 +85,12 @@ const Navbar = () => {
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
-            backgroundColor={neutralLight}
-            borderRadius="9px"
-            gap="3rem"
-            padding="0.1rem 1.5rem"
+            // backgroundColor={neutralLight}
+            // borderRadius="9px"
+            // gap="3rem"
+            // padding="0.1rem 1.5rem"
           >
-            <SearchBar setResults={setResults} userId={_id}/>
+            <SearchBar setResults={setResults} userId={_id} placeholder="Search For a Friend" fill="#000000"/>
             <SearchResultsList results={results}/>
             {/* <InputBase placeholder="Search..." value={searchText} onChange={(e)=>{setsearchText(()=>e.target.value)}}/>
             <IconButton onClick={handleSearch}>

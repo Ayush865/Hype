@@ -4,11 +4,11 @@ export const search=async (req,res)=>{
   let { keyword} = req.query;
   
   try {
-    console.log("In searching mode");
-    if (parseInt(start) === 0) {
-      start = 1;
-    }
-    const skip = parseInt(start - 1) * parseInt(limit);
+    // console.log("In searching mode");
+    // if (parseInt(start) === 0) {
+    //   start = 1;
+    // }
+    // const skip = parseInt(start - 1) * parseInt(limit);
 
    let data = await User.aggregate([
       {
@@ -16,7 +16,7 @@ export const search=async (req,res)=>{
           
           '$or': [
             { "firstName": { '$regex': new RegExp(`^${keyword}`), $options: 'i' } },
-            { "name": { '$regex': new RegExp(`^${keyword}`), $options: 'i' }}
+            { "lastName": { '$regex': new RegExp(`^${keyword}`), $options: 'i' }}
           ]      
           
         }
